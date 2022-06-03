@@ -1,8 +1,9 @@
 package main
 
 import (
-	"data/ch9/split"
 	"fmt"
+
+	"github.com/xfp-discerning/test/ch9/split"
 )
 
 func main() {

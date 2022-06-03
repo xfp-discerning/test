@@ -1,8 +1,9 @@
 package main
 
 import (
-	"data/ch4/mylogger"
 	"time"
+
+	"github.com/xfp-discerning/test/ch4/mylogger"
 )
 
 //测试我们写的日志库的程序

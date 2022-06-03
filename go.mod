@@ -1,4 +1,4 @@
-module code
+module github.com/xfp-discerning/test
 
 go 1.18
 
