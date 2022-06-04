@@ -38,10 +38,16 @@ func (s *Server) Run() error {
 	return nil
 }
 
+func New(s Store) *Server {
+	return &Server{
+		store: s,
+	}
+}
+
 func main() {
 	store := redis{}
-	s := Server{
-		store: &store,
-	}
+	s := New(&store)
 	s.User("Bob")
 }
+
+// optional function

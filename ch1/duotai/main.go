@@ -24,9 +24,11 @@ func main() {
 	var ch Human
 	var am Human
 
-	ch = Chinese{}
-	am = American{}
+	ch = new(Chinese) //分配到堆
+	am = &American{}
 	fmt.Printf("%T\n", Chinese{})
+	fmt.Printf("%T\n", ch)
+
 	ch.speak("Chinese")
 	am.speak("English")
 }
