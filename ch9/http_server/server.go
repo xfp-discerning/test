@@ -27,6 +27,6 @@ func f2(w http.ResponseWriter, r *http.Request) { //在服务端打印客户端�
 
 func main() {
 	http.HandleFunc("/", f1)
-	http.HandleFunc("/hello/", f2)
+	http.HandleFunc("/h/", f2)
 	http.ListenAndServe("127.0.0.1:9090", nil)
 }

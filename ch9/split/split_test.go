@@ -22,7 +22,7 @@ func TestSplit(t *testing.T) {
 	}
 	testGroup := []testCase{
 		{"bababef", "b", []string{"", "a", "a", "ef"}},
-		{"a:b:c", ":", []string{"a", "b", "a"}},
+		{"a:b:c", ":", []string{"a", "b", "c"}},
 	}
 	for _, tr := range testGroup {
 		got := Split(tr.str, tr.sep)
@@ -41,7 +41,7 @@ func TestSplit1(t *testing.T) {
 	}
 	testGroup := map[string]testCase{
 		"case1": {"bababef", "b", []string{"", "a", "a", "ef"}},
-		"case2": {"a:b:c", ":", []string{"a", "b", "a"}},
+		"case2": {"a:b:c", ":", []string{"a", "b", "c"}},
 	}
 	for name, tr := range testGroup {
 		t.Run(name, func(t *testing.T) {
