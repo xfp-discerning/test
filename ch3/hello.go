@@ -31,7 +31,7 @@ type animal struct {
 
 type dog struct {
 	Feet uint8 `json:"feet"`
-	animal
+	animal	
 }
 
 func (a animal) move() {
