@@ -21,14 +21,15 @@ func main() {
 	defer cli.Close()
 
 	//put
+	value := `[{"path":"c:/tmp/nginx.log","topic":"web_log"},{"path":"d:/xxx/redis.log","topic":"redis_log"}]`
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-	_, err = cli.Put(ctx, "xfp", "handsome")
+	_, err = cli.Put(ctx, "xfp", value)
 	cancel()//做一个超时处理
 	if err != nil {
 		fmt.Println("put to etcd failed, err:", err)
 		return
 	}
-
+	fmt.Println("success")
 	//get
 	ctx, cancel = context.WithTimeout(context.Background(), time.Second)
 	resp, err := cli.Get(ctx, "xfp")
