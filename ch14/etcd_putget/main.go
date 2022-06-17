@@ -21,10 +21,10 @@ func main() {
 	defer cli.Close()
 
 	//put
-	value := `[{"path":"c:/tmp/nginx.log","topic":"web_log"},{"path":"d:/xxx/redis.log","topic":"redis_log"}]`
+	value := `[{"path":"c:/tmp/nginx.log","topic":"web_log"},{"path":"d:/xxx/redis.log","topic":"redis_log"},{"path":"d:/yyy/ectd.log","topic":"ectd_log"}]`
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	_, err = cli.Put(ctx, "xfp", value)
-	cancel()//做一个超时处理
+	cancel() //做一个超时处理
 	if err != nil {
 		fmt.Println("put to etcd failed, err:", err)
 		return
