@@ -15,7 +15,7 @@ type HelloSeviceClient struct {
 //没懂
 // var HelloSeviceInterface = (*HelloSeviceClient)(nil)
 
-//拨号功能封装，传入协议和地址字段，返回*rpc.Client类型(rpc.Dial的返回类型)和err
+//rpc.dial拨号功能封装，传入协议和地址字段，返回*rpc.Client类型(rpc.Dial的返回类型)和err
 func DialHelloService(network, address string) (*HelloSeviceClient, error) {
 	c, err := rpc.Dial(network, address)
 	if err != nil {
