@@ -29,4 +29,5 @@ func main() {
 	fmt.Println(*a)
 	//make用于分配内存，只用于slice、map、channel，make返回值是三个类型的本身
 	//new的返回值是对应数据类型的指针
+
 }
