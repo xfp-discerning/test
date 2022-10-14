@@ -22,12 +22,12 @@ func main() {
 	// }
 	//长连接适用于请求不太频繁的，用完就关闭
 	data := url.Values{}
-	urlObj, _ := url.Parse("http://127.0.0.1:9090/hello/")
+	urlObj, _ := url.Parse("http://127.0.0.1:9090/h")
 	data.Set("name", "xfp")
 	data.Set("age", "22")
 	urlQuery := data.Encode()
 	urlObj.RawQuery = urlQuery
-	rep, err := http.NewRequest("GET", urlObj.String(), nil)
+	rep, _ := http.NewRequest("GET", urlObj.String(), nil)
 	resp, err := http.DefaultClient.Do(rep)
 	if err != nil {
 		fmt.Println(err)
